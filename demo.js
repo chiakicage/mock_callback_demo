@@ -7,6 +7,6 @@ mocker.login('123','123',function(data,error){
     mocker.list(token,function(data,error){
         if(error) throw error;
         console.log(data);
-        //...?
+        //...
     })
 })
