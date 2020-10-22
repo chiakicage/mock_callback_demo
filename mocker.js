@@ -22,7 +22,7 @@ function item(tk,id,callback){
                     id: id,
                     num: id*2
                 },undefined)
-        },500);
+        },5000);
     else callback(undefined,WRONG_TOKEN)
 }
 module.exports={

@@ -1,12 +1,17 @@
-let mocker=require('./mocker')
+let mocker = require('./mocker')
 console.log('Request Start')
-mocker.login('123','123',function(data,error){
-    if(error) throw error;
-    let token=data;
+mocker.login('123', '123', function (data, error) {
+    if (error) throw error;
+    let token = data;
     console.log(token)
-    mocker.list(token,function(data,error){
-        if(error) throw error;
+    mocker.list(token, function (data, error) {
+        if (error) throw error;
         console.log(data);
-        //...
+        for (let id of data) {
+            mocker.item(token, id, function(data, error) {
+                if (error) throw error;
+                console.log(data);
+            });
+        }
     })
 })
